@@ -1,0 +1,56 @@
+void Opponent::setMvComp( ){
+
+	if(lastHuman == Opponent::SCISSORS)
+	{
+		switch(gameResult)
+		{
+			case Opponent::WIN:
+				mvComp = Opponent::ROCK;
+				break;
+			case Opponent::LOSE:
+				mvComp = Opponent::SCISSORS;
+				break;
+			case Opponent::DRAW:
+			default:
+				mvComp = Opponent::PAPER;
+				break;
+		}
+	}
+	else if(lastHuman == Opponent::PAPER)
+	{
+		switch(gameResult)
+		{
+			case Opponent::WIN:
+				mvComp = Opponent::SCISSORS;
+				break;
+			case Opponent::LOSE:
+				mvComp = Opponent::PAPER;
+				break;
+			case Opponent::DRAW:
+			default:
+				mvComp = Opponent::ROCK;
+				break;
+		}
+	}
+	else if(lastHuman == Opponent::ROCK)
+	{
+		switch(gameResult)
+		{
+			case Opponent::WIN:
+				mvComp = Opponent::PAPER;
+				break;
+			case Opponent::LOSE:
+				mvComp = Opponent::ROCK;
+				break;
+			case Opponent::DRAW:
+			default:	
+				mvComp = Opponent::SCISSORS;
+				break;
+		}
+	}
+	else
+	{
+		mvComp = Opponent::ROCK;
+	}
+
+}
